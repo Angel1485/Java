@@ -1,0 +1,27 @@
+{
+  // 👇 SOLO CAMBIA AQUÍ POR EL NOMBRE QUE TÚ TIENES
+  "java.jdt.ls.java.home": "C:/Program Files/Java/jdk-21.0.11",
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-21",
+      "path": "C:/Program Files/Java/jdk-21.0.11",
+      "default": true
+    }
+  ],
+  "java.project.sourcePaths": ["src"],
+  "java.project.outputPath": "bin",
+
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.activeIconPack": "java",
+  "material-icon-theme.folders.theme": "specific",
+  "material-icon-theme.folders.associations": {
+    ".vscode": "config",
+    "lib": "lib",
+    "src": "src",
+    "com": "package",
+    "bin": "dist"
+  },
+  "material-icon-theme.files.associations": {
+    "*.java": "java"
+  }
+}
