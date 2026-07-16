@@ -4,7 +4,20 @@ public class TestRestaurante {
         Restaurante rest1 = new Restaurante();
         Restaurante rest2 = new Restaurante();
 
-        // 2. Modificar los valores de sus atributos
+       // 2. Mostrar los valores por defecto en consola
+       System.out.println("Valores por defecto");
+        System.out.println("=== DATOS DEL RESTAURANTE 1 ===");
+        System.out.println("Nombre: " + rest1.nombre);
+        System.out.println("Dirección: " + rest1.direccion);
+        System.out.println("Calificación: " + rest1.calificacion + " estrellas\n");
+        System.out.println();
+        System.out.println("=== DATOS DEL RESTAURANTE 2 ===");
+        System.out.println("Nombre: " + rest2.nombre);
+        System.out.println("Dirección: " + rest2.direccion);
+        System.out.println("Calificación: " + rest2.calificacion + " estrellas");
+       
+       
+        // 3. Modificar los valores de sus atributos
         rest1.nombre = "Restaurante El Andino";
         rest1.direccion = "Calle Larga 456, Cuenca";
         rest1.calificacion = 4.6;
@@ -12,13 +25,15 @@ public class TestRestaurante {
         rest2.nombre = "Sabor de la Sierra";
         rest2.direccion = "Av. 12 de Abril 789, Cuenca";
         rest2.calificacion = 4.2;
-
-        // 3. Mostrar los valores en consola
+        
+        // 4. Mostrar los valores en consola
+        System.out.println();
+        System.out.println("Con valores cargados");
         System.out.println("=== DATOS DEL RESTAURANTE 1 ===");
         System.out.println("Nombre: " + rest1.nombre);
         System.out.println("Dirección: " + rest1.direccion);
         System.out.println("Calificación: " + rest1.calificacion + " estrellas\n");
-
+        System.out.println();
         System.out.println("=== DATOS DEL RESTAURANTE 2 ===");
         System.out.println("Nombre: " + rest2.nombre);
         System.out.println("Dirección: " + rest2.direccion);
