@@ -44,8 +44,11 @@ public class TestCalculadora {
         double resultadoPromedio = miCalc.promediar(num1, num2, num3);
 
         System.out.println("Números a promediar: " + num1 + ", " + num2 + ", " + num3);
-        System.out.println("El promedio es: " + resultadoPromedio);
+        System.out.println("El promedio es: " + resultadoPromedio + "\n");
 
+        // --- Prueba de mostrarResultado ---
+        System.out.println("=== MENSAJE SOLICITADO ===");
+        miCalc.mostrarResultado();
 
     }
 }

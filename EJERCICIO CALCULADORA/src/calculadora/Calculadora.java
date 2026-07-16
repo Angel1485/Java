@@ -37,4 +37,9 @@ public class Calculadora {
         return promedio;
     }
 
+    // No recibe parámetros y no devuelve ningún valor
+    public void mostrarResultado() {
+        System.out.println("Ahorita no joven, Salí al almuerzo. Regreso en 15 minutos");
+    }
+
 }
