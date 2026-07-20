@@ -52,8 +52,5 @@ public class TestFiguras {
         System.out.println("Área del circulo: " + miCirculo.calcularArea());
         System.out.println("Perímetro del circulo: " + miCirculo.calcularPerimetro());
 
-
-
-
     }
 }
