@@ -3,7 +3,15 @@ package figuras;
 public class Cuadrado {
 
     // Atributo solicitado
-    public double lado;
+    private double lado;
+
+    public double getLado() {
+        return lado;
+    }
+
+    public void setLado(double lado) {
+        this.lado = lado;
+    }
 
     // Constructor vacío
     public Cuadrado() {

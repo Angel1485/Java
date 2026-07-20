@@ -5,6 +5,14 @@ public class Circulo {
     // Atributo
     private double radio;
 
+    public double getRadio() {
+        return radio;
+    }
+
+    public void setRadio(double radio) {
+        this.radio = radio;
+    }
+
     // Constructor con parametros
     public Circulo(double radio) {
         this.radio = radio;

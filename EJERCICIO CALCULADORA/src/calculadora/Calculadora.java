@@ -1,45 +1,107 @@
-// Indicamos que pertenece al paquete
 package calculadora;
 
 public class Calculadora {
+    // ATRIBUTOS PRIVADOS (cumpliendo el encapsulamiento)
+    private double numero1;
+    private double numero2;
+    private double resultado;
+    private String operacionRealizada;
 
-    // Recibe 2 números decimales y devuelve el resultado
-    public double sumar(double valor1, double valor2) {
-        return valor1 + valor2;  //Retorna directo
+    // Constructor vacío
+    public Calculadora() {
+        this.numero1 = 0;
+        this.numero2 = 0;
+        this.resultado = 0;
+        this.operacionRealizada = "Ninguna";
     }
 
-    // Recibe 2 números decimales y devuelve el resultado
-    public double restar(double valor1, double valor2) {
-        return valor1 - valor2;
+    public double getNumero1() {
+        return numero1;
     }
 
-    // Recibe 2 números decimales y devuelve el resultado
-    public double multiplicar(double valor1, double valor2) {
-        double resultado = valor1 * valor2;
-        return resultado;  //retorna con variable
+    public void setNumero1(double numero1) {
+        this.numero1 = numero1;
     }
 
-    // Recibe dividendo y divisor, devuelve el cociente
-    public double dividir(double dividendo, double divisor) {
-        // Validación para evitar error al dividir entre 0
-        if (divisor == 0) {
-            System.out.println("❌ Error: No se puede dividir entre cero");
-            return 0; // Valor seguro de retorno
-        }
-        double resultado = dividendo / divisor;
+    public double getNumero2() {
+        return numero2;
+    }
+
+    public void setNumero2(double numero2) {
+        this.numero2 = numero2;
+    }
+
+    public double getResultado() {
         return resultado;
     }
 
-    // Recibe 3 números y devuelve su promedio
-    public double promediar(double valor1, double valor2, double valor3) {
-        double sumaTotal = valor1 + valor2 + valor3;
-        double promedio = sumaTotal / 3;
-        return promedio;
+    public void setResultado(double resultado) {
+        this.resultado = resultado;
     }
 
-    // No recibe parámetros y no devuelve ningún valor
+    public String getOperacionRealizada() {
+        return operacionRealizada;
+    }
+
+    public void setOperacionRealizada(String operacionRealizada) {
+        this.operacionRealizada = operacionRealizada;
+    }
+
+    // MÉTODOS DE OPERACIONES
+    public double sumar(double n1, double n2) {
+        // Asignamos valores usando los SETTERS
+        setNumero1(n1);
+        setNumero2(n2);
+        setOperacionRealizada("Suma");
+        
+        this.resultado = n1 + n2;
+        return this.resultado;
+    }
+
+    public double restar(double n1, double n2) {
+        setNumero1(n1);
+        setNumero2(n2);
+        setOperacionRealizada("Resta");
+        
+        this.resultado = n1 - n2;
+        return this.resultado;
+    }
+
+    public double multiplicar(double n1, double n2) {
+        setNumero1(n1);
+        setNumero2(n2);
+        setOperacionRealizada("Multiplicación");
+        
+        this.resultado = n1 * n2;
+        return this.resultado;
+    }
+
+    public double dividir(double n1, double n2) {
+        setNumero1(n1);
+        setNumero2(n2);
+        setOperacionRealizada("División");
+        
+        if (n2 == 0) {
+            System.out.println("ERROR: No se puede dividir entre cero.");
+            this.resultado = 0;
+            return 0;
+        }
+        this.resultado = n1 / n2;
+        return this.resultado;
+    }
+
+    public double promediar(double n1, double n2, double n3) {
+        setOperacionRealizada("Promedio de 3 números");
+        this.resultado = (n1 + n2 + n3) / 3;
+        return this.resultado;
+    }
+
     public void mostrarResultado() {
-        System.out.println("Ahorita no joven, Salí al almuerzo. Regreso en 15 minutos");
+        // Leemos valores usando los GETTERS
+        System.out.println("\n--- INFORMACIÓN ENCAPSULADA ---");
+        System.out.println("Último número 1 ingresado: " + getNumero1());
+        System.out.println("Último número 2 ingresado: " + getNumero2());
+        System.out.println("Operación realizada: " + getOperacionRealizada());
+        System.out.println("Resultado final: " + getResultado());
     }
-
 }
