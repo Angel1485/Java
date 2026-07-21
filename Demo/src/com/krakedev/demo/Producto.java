@@ -7,13 +7,13 @@ public class Producto {
     private String descripcion;
     private double peso;
 
+
     // 5. Constructor con código y nombre como parámetros
     public Producto(int codigo, String nombre) {
         this.codigo = codigo;
         this.nombre = nombre;
     }
-
-    // 4. Métodos getters y setters para TODOS los atributos
+    
     public int getCodigo() {
         return codigo;
     }
@@ -45,4 +45,6 @@ public class Producto {
     public void setPeso(double peso) {
         this.peso = peso;
     }
+
+  
 }

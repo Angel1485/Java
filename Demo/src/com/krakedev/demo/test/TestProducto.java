@@ -8,7 +8,7 @@ public class TestProducto {
         Producto producto1 = new Producto(101, "Laptop Gamer");
 
         // Asignar valores a descripción y peso
-        producto1.setDescripcion("Laptop con procesador Intel i7 y 16GB RAM");
+        producto1.setDescripcion("Laptop con procesador Intel i7 y 16GB RAM  555");
         producto1.setPeso(2.3);
 
         // Imprimir los valores en consola
