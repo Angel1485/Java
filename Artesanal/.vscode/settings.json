@@ -23,5 +23,13 @@
   },
   "material-icon-theme.files.associations": {
     "*.java": "java"
-  }
+  },
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "c:\\Users\\asarango\\Downloads\\junit-platform-console-standalone-1.10.2.jar",
+    "c:\\Users\\asarango\\Downloads\\opentest4j-1.3.0.jar",
+    "c:\\Users\\asarango\\Downloads\\junit-platform-launcher-1.10.2.jar",
+    "c:\\Users\\asarango\\Downloads\\junit-jupiter-engine-5.10.2.jar",
+    "c:\\Users\\asarango\\Downloads\\junit-jupiter-api-5.10.2.jar"
+  ]
 }
