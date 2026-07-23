@@ -43,6 +43,32 @@ public class Banco {
         }
     }
 
+    // MÉTODO RETIRAR SEGÚN LO SOLICITADO
+    public boolean retirar(double monto, Cuenta cuenta) {
+        // Validaciones: monto > 0 Y no supere el saldo disponible
+        if (monto > 0 && monto <= cuenta.getSaldoActual()) {
+            double nuevoSaldo = cuenta.getSaldoActual() - monto;
+            cuenta.setSaldoActual(nuevoSaldo);
+            return true; // Retiro exitoso
+        }
+        return false; // No cumple las condiciones
+    }
+
+    // MÉTODO TRANSFERIR SEGÚN LO SOLICITADO
+    public boolean transferir(double monto, Cuenta origen, Cuenta destino) {
+        // Primero intentamos retirar de la cuenta origen
+        boolean retiroExitoso = retirar(monto, origen);
+        
+        // Si el retiro salió bien, depositamos en la cuenta destino
+        if (retiroExitoso) {
+            depositar(monto, destino);
+            return true; // Transferencia completa
+        }
+        
+        // Si no se pudo retirar, no hacemos nada 
+        return false;
+    }
+
 
     // Getter y Setter
     public int getUltimoCodigo() {

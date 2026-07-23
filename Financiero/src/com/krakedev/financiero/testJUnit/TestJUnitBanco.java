@@ -90,4 +90,123 @@ public class TestJUnitBanco {
         assertEquals(0, cuenta.getSaldoActual());
     }
 
+    //////////PRUEBAS RETIRAR
+
+     @Test
+    void testRetirar_MontoValidoMenorSaldo_Exito() {
+        Banco banco = new Banco();
+        Cliente cli = new Cliente("0104444444", "Pedro", "Cruz");
+        Cuenta cuenta = banco.crearCuenta(cli);
+        banco.depositar(1000, cuenta); // Saldo inicial $1000
+
+        boolean resultado = banco.retirar(300, cuenta);
+
+        assertTrue(resultado);
+        assertEquals(700, cuenta.getSaldoActual(), 0.001);
+    }
+
+    @Test
+    void testRetirar_MontoIgualSaldo_Exito() {
+        Banco banco = new Banco();
+        Cliente cli = new Cliente("0105555555", "Sofía", "Reyes");
+        Cuenta cuenta = banco.crearCuenta(cli);
+        banco.depositar(500, cuenta);
+
+        boolean resultado = banco.retirar(500, cuenta);
+
+        assertTrue(resultado);
+        assertEquals(0, cuenta.getSaldoActual());
+    }
+
+    @Test
+    void testRetirar_MontoCero_Falla() {
+        Banco banco = new Banco();
+        Cliente cli = new Cliente("0106666666", "Diego", "Mora");
+        Cuenta cuenta = banco.crearCuenta(cli);
+        banco.depositar(200, cuenta);
+
+        boolean resultado = banco.retirar(0, cuenta);
+
+        assertFalse(resultado);
+        assertEquals(200, cuenta.getSaldoActual());
+    }
+
+    @Test
+    void testRetirar_MontoNegativo_Falla() {
+        Banco banco = new Banco();
+        Cliente cli = new Cliente("0107777777", "Luz", "Vega");
+        Cuenta cuenta = banco.crearCuenta(cli);
+        banco.depositar(300, cuenta);
+
+        boolean resultado = banco.retirar(-50, cuenta);
+
+        assertFalse(resultado);
+        assertEquals(300, cuenta.getSaldoActual());
+    }
+
+    @Test
+    void testRetirar_MontoSuperaSaldo_Falla() {
+        Banco banco = new Banco();
+        Cliente cli = new Cliente("0108888888", "Jorge", "Paz");
+        Cuenta cuenta = banco.crearCuenta(cli);
+        banco.depositar(250, cuenta);
+
+        boolean resultado = banco.retirar(300, cuenta);
+
+        assertFalse(resultado);
+        assertEquals(250, cuenta.getSaldoActual());
+    }
+
+    //////////PRUEBAS TRANSFERIR
+    
+     @Test
+    void testTransferir_OperacionExitosa() {
+        Banco banco = new Banco();
+        Cliente cli1 = new Cliente("0101111111", "Juan", "Pérez");
+        Cliente cli2 = new Cliente("0102222222", "Ana", "Gómez");
+        
+        Cuenta cuentaOrigen = banco.crearCuenta(cli1);
+        Cuenta cuentaDestino = banco.crearCuenta(cli2);
+        banco.depositar(1000, cuentaOrigen); // Saldo origen: 1000
+
+        boolean resultado = banco.transferir(300, cuentaOrigen, cuentaDestino);
+
+        assertTrue(resultado);
+        assertEquals(700, cuentaOrigen.getSaldoActual(), 0.001);
+        assertEquals(300, cuentaDestino.getSaldoActual(), 0.001);
+    }
+
+    @Test
+    void testTransferir_MontoSuperaSaldoOrigen_Falla() {
+        Banco banco = new Banco();
+        Cliente cli1 = new Cliente("0103333333", "Luis", "Ruiz");
+        Cliente cli2 = new Cliente("0104444444", "Sofía", "Mora");
+        
+        Cuenta cuentaOrigen = banco.crearCuenta(cli1);
+        Cuenta cuentaDestino = banco.crearCuenta(cli2);
+        banco.depositar(200, cuentaOrigen);
+
+        boolean resultado = banco.transferir(500, cuentaOrigen, cuentaDestino);
+
+        assertFalse(resultado);
+        assertEquals(200, cuentaOrigen.getSaldoActual());
+        assertEquals(0, cuentaDestino.getSaldoActual());
+    }
+
+    @Test
+    void testTransferir_MontoNegativo_Falla() {
+        Banco banco = new Banco();
+        Cliente cli1 = new Cliente("0105555555", "Carlos", "Vega");
+        Cliente cli2 = new Cliente("0106666666", "María", "Cruz");
+        
+        Cuenta cuentaOrigen = banco.crearCuenta(cli1);
+        Cuenta cuentaDestino = banco.crearCuenta(cli2);
+        banco.depositar(500, cuentaOrigen);
+
+        boolean resultado = banco.transferir(-100, cuentaOrigen, cuentaDestino);
+
+        assertFalse(resultado);
+        assertEquals(500, cuentaOrigen.getSaldoActual());
+        assertEquals(0, cuentaDestino.getSaldoActual());
+    }
 }
