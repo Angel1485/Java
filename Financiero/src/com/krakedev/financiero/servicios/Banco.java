@@ -30,6 +30,19 @@ public class Banco {
         return cuentaNueva;
     }
 
+    // MÉTODO DEPOSITAR SEGÚN LO SOLICITADO
+    public boolean depositar(double monto, Cuenta cuenta) {
+        // Validación: el monto debe ser mayor a 0
+        if (monto > 0) {
+            // Sumar al saldo actual
+            double nuevoSaldo = cuenta.getSaldoActual() + monto;
+            cuenta.setSaldoActual(nuevoSaldo);
+            return true; // Depósito exitoso
+        } else {
+            return false; // Monto inválido
+        }
+    }
+
 
     // Getter y Setter
     public int getUltimoCodigo() {

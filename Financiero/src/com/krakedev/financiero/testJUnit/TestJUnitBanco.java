@@ -9,6 +9,7 @@ import com.krakedev.financiero.servicios.Banco;
 
 public class TestJUnitBanco {
 
+    ///////////PRUEBAS CERAR CUENTA
      @Test
     void testCrearCuenta_CodigosConsecutivos() {
         // Preparar objetos
@@ -48,6 +49,45 @@ public class TestJUnitBanco {
         assertNotNull(cuenta.getPropietario());
         assertEquals("0109999999", cuenta.getPropietario().getCedula());
         assertEquals("María", cuenta.getPropietario().getNombre());
+    }
+
+
+    //////////PRUEBAS DEPOSITAR
+    
+     @Test
+    void testDepositar_MontoValido_Exito() {
+        Banco banco = new Banco();
+        Cliente cli = new Cliente("0101111111", "Ana", "Ruiz");
+        Cuenta cuenta = banco.crearCuenta(cli);
+
+        boolean resultado = banco.depositar(500.75, cuenta);
+
+        assertTrue(resultado);
+        assertEquals(500.75, cuenta.getSaldoActual(), 0.001);
+    }
+
+    @Test
+    void testDepositar_MontoCero_Falla() {
+        Banco banco = new Banco();
+        Cliente cli = new Cliente("0102222222", "Luis", "Soto");
+        Cuenta cuenta = banco.crearCuenta(cli);
+
+        boolean resultado = banco.depositar(0, cuenta);
+
+        assertFalse(resultado);
+        assertEquals(0, cuenta.getSaldoActual());
+    }
+
+    @Test
+    void testDepositar_MontoNegativo_Falla() {
+        Banco banco = new Banco();
+        Cliente cli = new Cliente("0103333333", "Marta", "Gómez");
+        Cuenta cuenta = banco.crearCuenta(cli);
+
+        boolean resultado = banco.depositar(-100.50, cuenta);
+
+        assertFalse(resultado);
+        assertEquals(0, cuenta.getSaldoActual());
     }
 
 }
