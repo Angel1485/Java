@@ -7,11 +7,23 @@ public class Cliente {
     private String nombre;
     private String apellido;
 
+    // Constructor vacío 
+    public Cliente() {
+    }
+
     // Constructor
     public Cliente(String cedula, String nombre, String apellido) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
+    }
+
+    // Método imprimir
+    public void imprimir() {
+        System.out.println("=== Datos del Cliente ===");
+        System.out.println("Cédula: " + cedula);
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Apellido: " + apellido);
     }
 
     // Getters y Setters
@@ -37,14 +49,6 @@ public class Cliente {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
-    }
-
-    // Método imprimir
-    public void imprimir() {
-        System.out.println("=== Datos del Cliente ===");
-        System.out.println("Cédula: " + cedula);
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Apellido: " + apellido);
     }
 
 }
