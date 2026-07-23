@@ -1,0 +1,16 @@
+# Archivos de configuración del IDE
+.vscode/
+.settings/
+.classpath
+.project
+
+# Archivos compilados y salida de construcción
+bin/
+build/
+target/
+*.class
+
+# Archivos temporales y del sistema
+.DS_Store
+Thumbs.db
+*.log
