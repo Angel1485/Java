@@ -47,14 +47,30 @@ public class Directorio {
         return numero;
     }
 
+    // public Contacto buscarContacto(String numero) {
+    //     Contacto encontrado = null;
+    //     for(int i = 0; i < contactos.size(); i++) {
+    //         Contacto c = contactos.get(i);
+    //         if(c.getCelular().equals(numero)) {
+    //             encontrado =  c;
+    //             break;
+    //         }           
+    //     }
+    //     return encontrado;
+    // }
+
     public Contacto buscarContacto(String numero) {
-        for(int i = 0; i < contactos.size(); i++) {
-            Contacto c = contactos.get(i);
-            if(c.getCelular().equals(numero)) {
-                return c;
+
+        Contacto encontrado = null;
+        for (Contacto c : contactos) {
+            if(c.getCelular().equals(numero)){
+                encontrado = c;
+                break;
+            }else{
+
             }
         }
-        return null;
+        return encontrado;
     }
 
     public boolean eliminarContacto(String numero) {
