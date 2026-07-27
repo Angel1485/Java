@@ -7,7 +7,6 @@ public class Contacto {
     private int edad;
     private String celular;
     private double peso;
-
     
     public String getNombre() {
         return nombre;

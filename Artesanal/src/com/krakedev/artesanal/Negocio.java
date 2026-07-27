@@ -29,7 +29,6 @@ public class Negocio {
         cliente.setTotalConsumido(cliente.getTotalConsumido() + valor);
     }
 
-
     public String getNombre() {
         return nombre;
     }

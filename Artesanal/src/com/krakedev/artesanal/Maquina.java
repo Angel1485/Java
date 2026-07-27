@@ -9,6 +9,7 @@ public class Maquina {
     private double precioPorMl;
     private double capacidadMaxima;
     private double cantidadActual;
+    private double cantidadDesperdicio;
 
     public Maquina(String codigo, String nombreCerveza, String descripcion, double precioPorMl, double capacidadMaxima){
         this.codigo = codigo;
@@ -42,6 +43,12 @@ public class Maquina {
 
     public void llenarMaquina(){
         this.cantidadActual = this.capacidadMaxima - 200; //Cambia de 100 cambia a 200 
+    }
+
+    //vaciar maquina
+    public void vaciarMaquina(){
+        this.setCantidadDesperdicio(this.getCantidadActual());
+        this.setCantidadActual(0);
     }
 
     public boolean recargarCerveza(double cantidad) {
@@ -98,6 +105,18 @@ public class Maquina {
     }
     public double getCantidadActual() {
         return cantidadActual;
+    }
+
+    public void setCantidadActual(double cantidadActual) {
+        this.cantidadActual = cantidadActual;
+    }
+
+     public double getCantidadDesperdicio() {
+        return cantidadDesperdicio;
+    }
+
+    public void setCantidadDesperdicio(double cantidadDesperdicio) {
+        this.cantidadDesperdicio = cantidadDesperdicio;
     }
     
 }

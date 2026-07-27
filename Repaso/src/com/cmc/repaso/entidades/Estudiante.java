@@ -5,23 +5,31 @@ public class Estudiante {
     private String nombre;
     private double nota;
     private String resultado;
+    private double asistencia; 
+
+        public void setAsistencia(double asistencia) {
+        this.asistencia = asistencia;
+    }
 
     // Constructor que recibe nombre
-    public Estudiante(String nombre) {
+    public Estudiante(String nombre, double asistencia) {
         this.nombre = nombre;
+        this.asistencia = asistencia;
     }
 
     // Método calificar
-    public void calificar(double notaRecibida) {
+    public void calificar(double notaRecibida ) {
         // Asignar la nota al atributo
         this.nota = notaRecibida;
 
-        // Determinar el resultado
-        if (notaRecibida < 8) {
-            this.resultado = "F";
-        } else if (notaRecibida >= 8) {
+        if(notaRecibida >= 8 && this.getAsistencia() >= 80){
             this.resultado = "A";
+        }else if(notaRecibida >=8 && this.getAsistencia() < 80){
+            this.resultado = "X";
+        }else{
+             this.resultado = "F";
         }
+
     }
 
     // Opcional: Getters para ver los valores al probar
@@ -33,5 +41,20 @@ public class Estudiante {
     }
     public String getResultado() {
         return resultado;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setNota(double nota) {
+        this.nota = nota;
+    }
+
+    public void setResultado(String resultado) {
+        this.resultado = resultado;
+    }
+
+    public double getAsistencia() {
+        return asistencia;
     }
 }

@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import com.krakedev.financiero.entidades.Cliente;
 import com.krakedev.financiero.entidades.Cuenta;
+import com.krakedev.financiero.entidades.Direccion;
 import com.krakedev.financiero.servicios.Banco;
 
 public class TestJUnitBanco {
@@ -14,7 +15,8 @@ public class TestJUnitBanco {
     void testCrearCuenta_CodigosConsecutivos() {
         // Preparar objetos
         Banco banco = new Banco();
-        Cliente clientePrueba = new Cliente("0100000001", "Prueba", "JUnit");
+        Direccion dir = new Direccion();
+        Cliente clientePrueba = new Cliente("0100000001", "Prueba", "JUnit", dir);
 
         // Crear varias cuentas
         Cuenta cuenta1 = banco.crearCuenta(clientePrueba);
@@ -30,7 +32,8 @@ public class TestJUnitBanco {
     @Test
     void testCrearCuenta_TipoAhorrosPorDefecto() {
         Banco banco = new Banco();
-        Cliente clientePrueba = new Cliente("0100000002", "Prueba", "Tipo");
+        Direccion dir = new Direccion();
+        Cliente clientePrueba = new Cliente("0100000002", "Prueba", "Tipo", dir);
 
         Cuenta cuenta = banco.crearCuenta(clientePrueba);
 
@@ -41,7 +44,8 @@ public class TestJUnitBanco {
     @Test
     void testCrearCuenta_AsignaClienteCorrectamente() {
         Banco banco = new Banco();
-        Cliente clientePrueba = new Cliente("0109999999", "María", "López");
+        Direccion dir = new Direccion();
+        Cliente clientePrueba = new Cliente("0109999999", "María", "López", dir);
 
         Cuenta cuenta = banco.crearCuenta(clientePrueba);
 
@@ -57,7 +61,8 @@ public class TestJUnitBanco {
      @Test
     void testDepositar_MontoValido_Exito() {
         Banco banco = new Banco();
-        Cliente cli = new Cliente("0101111111", "Ana", "Ruiz");
+        Direccion dir = new Direccion();
+        Cliente cli = new Cliente("0101111111", "Ana", "Ruiz", dir);
         Cuenta cuenta = banco.crearCuenta(cli);
 
         boolean resultado = banco.depositar(500.75, cuenta);
@@ -69,7 +74,8 @@ public class TestJUnitBanco {
     @Test
     void testDepositar_MontoCero_Falla() {
         Banco banco = new Banco();
-        Cliente cli = new Cliente("0102222222", "Luis", "Soto");
+        Direccion dir = new Direccion();
+        Cliente cli = new Cliente("0102222222", "Luis", "Soto", dir);
         Cuenta cuenta = banco.crearCuenta(cli);
 
         boolean resultado = banco.depositar(0, cuenta);
@@ -81,7 +87,8 @@ public class TestJUnitBanco {
     @Test
     void testDepositar_MontoNegativo_Falla() {
         Banco banco = new Banco();
-        Cliente cli = new Cliente("0103333333", "Marta", "Gómez");
+        Direccion dir = new Direccion();
+        Cliente cli = new Cliente("0103333333", "Marta", "Gómez", dir);
         Cuenta cuenta = banco.crearCuenta(cli);
 
         boolean resultado = banco.depositar(-100.50, cuenta);
@@ -95,7 +102,8 @@ public class TestJUnitBanco {
      @Test
     void testRetirar_MontoValidoMenorSaldo_Exito() {
         Banco banco = new Banco();
-        Cliente cli = new Cliente("0104444444", "Pedro", "Cruz");
+        Direccion dir = new Direccion();
+        Cliente cli = new Cliente("0104444444", "Pedro", "Cruz", dir);
         Cuenta cuenta = banco.crearCuenta(cli);
         banco.depositar(1000, cuenta); // Saldo inicial $1000
 
@@ -108,7 +116,8 @@ public class TestJUnitBanco {
     @Test
     void testRetirar_MontoIgualSaldo_Exito() {
         Banco banco = new Banco();
-        Cliente cli = new Cliente("0105555555", "Sofía", "Reyes");
+        Direccion dir = new Direccion();
+        Cliente cli = new Cliente("0105555555", "Sofía", "Reyes", dir);
         Cuenta cuenta = banco.crearCuenta(cli);
         banco.depositar(500, cuenta);
 
@@ -121,7 +130,8 @@ public class TestJUnitBanco {
     @Test
     void testRetirar_MontoCero_Falla() {
         Banco banco = new Banco();
-        Cliente cli = new Cliente("0106666666", "Diego", "Mora");
+        Direccion dir = new Direccion();
+        Cliente cli = new Cliente("0106666666", "Diego", "Mora", dir);
         Cuenta cuenta = banco.crearCuenta(cli);
         banco.depositar(200, cuenta);
 
@@ -134,7 +144,8 @@ public class TestJUnitBanco {
     @Test
     void testRetirar_MontoNegativo_Falla() {
         Banco banco = new Banco();
-        Cliente cli = new Cliente("0107777777", "Luz", "Vega");
+        Direccion dir = new Direccion();
+        Cliente cli = new Cliente("0107777777", "Luz", "Vega", dir);
         Cuenta cuenta = banco.crearCuenta(cli);
         banco.depositar(300, cuenta);
 
@@ -147,7 +158,8 @@ public class TestJUnitBanco {
     @Test
     void testRetirar_MontoSuperaSaldo_Falla() {
         Banco banco = new Banco();
-        Cliente cli = new Cliente("0108888888", "Jorge", "Paz");
+        Direccion dir = new Direccion();
+        Cliente cli = new Cliente("0108888888", "Jorge", "Paz", dir);
         Cuenta cuenta = banco.crearCuenta(cli);
         banco.depositar(250, cuenta);
 
@@ -162,8 +174,9 @@ public class TestJUnitBanco {
      @Test
     void testTransferir_OperacionExitosa() {
         Banco banco = new Banco();
-        Cliente cli1 = new Cliente("0101111111", "Juan", "Pérez");
-        Cliente cli2 = new Cliente("0102222222", "Ana", "Gómez");
+        Direccion dir = new Direccion();
+        Cliente cli1 = new Cliente("0101111111", "Juan", "Pérez", dir);
+        Cliente cli2 = new Cliente("0102222222", "Ana", "Gómez", dir);
         
         Cuenta cuentaOrigen = banco.crearCuenta(cli1);
         Cuenta cuentaDestino = banco.crearCuenta(cli2);
@@ -179,8 +192,9 @@ public class TestJUnitBanco {
     @Test
     void testTransferir_MontoSuperaSaldoOrigen_Falla() {
         Banco banco = new Banco();
-        Cliente cli1 = new Cliente("0103333333", "Luis", "Ruiz");
-        Cliente cli2 = new Cliente("0104444444", "Sofía", "Mora");
+        Direccion dir = new Direccion();
+        Cliente cli1 = new Cliente("0103333333", "Luis", "Ruiz", dir);
+        Cliente cli2 = new Cliente("0104444444", "Sofía", "Mora", dir);
         
         Cuenta cuentaOrigen = banco.crearCuenta(cli1);
         Cuenta cuentaDestino = banco.crearCuenta(cli2);
@@ -196,8 +210,9 @@ public class TestJUnitBanco {
     @Test
     void testTransferir_MontoNegativo_Falla() {
         Banco banco = new Banco();
-        Cliente cli1 = new Cliente("0105555555", "Carlos", "Vega");
-        Cliente cli2 = new Cliente("0106666666", "María", "Cruz");
+        Direccion dir = new Direccion();
+        Cliente cli1 = new Cliente("0105555555", "Carlos", "Vega", dir);
+        Cliente cli2 = new Cliente("0106666666", "María", "Cruz", dir);
         
         Cuenta cuentaOrigen = banco.crearCuenta(cli1);
         Cuenta cuentaDestino = banco.crearCuenta(cli2);

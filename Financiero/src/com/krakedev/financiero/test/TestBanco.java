@@ -2,6 +2,7 @@ package com.krakedev.financiero.test;
 
 import com.krakedev.financiero.entidades.Cliente;
 import com.krakedev.financiero.entidades.Cuenta;
+import com.krakedev.financiero.entidades.Direccion;
 import com.krakedev.financiero.servicios.Banco;
 
 public class TestBanco {
@@ -9,7 +10,8 @@ public class TestBanco {
     public static void main(String[] args) {
 
         Banco miBanco = new Banco();
-        Cliente cli1 = new Cliente("0101234567", "Ana", "Vásquez");
+        Direccion dir = new Direccion();
+        Cliente cli1 = new Cliente("0101234567", "Ana", "Vásquez", dir);
 
         // Crear varias cuentas para ver los códigos consecutivos
         Cuenta c1 = miBanco.crearCuenta(cli1);

@@ -1,10 +1,12 @@
 import com.krakedev.financiero.entidades.Cliente;
 import com.krakedev.financiero.entidades.Cuenta;
+import com.krakedev.financiero.entidades.Direccion;
 
 public class App {
     public static void main(String[] args) throws Exception {
         // Creamos un cliente
-        Cliente cli1 = new Cliente("0105678901", "María", "López");
+        Direccion dir = new Direccion();
+        Cliente cli1 = new Cliente("0105678901", "María", "López", dir);
 
         // Creamos una cuenta
         Cuenta cue1 = new Cuenta("CT-001");

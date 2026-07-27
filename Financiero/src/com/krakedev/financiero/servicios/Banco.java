@@ -12,6 +12,18 @@ public class Banco {
     public Banco() {
     }
 
+    // MÉTODO COBARA MANTENIMENTO
+    public boolean cobrarMantenimiento(double monto, Cuenta cuenta) {
+        
+         if (monto > 0 && (cuenta.getSaldoActual() >= monto)) {
+           double nuevoSaldo1 = cuenta.getSaldoActual() - monto;
+            cuenta.setSaldoActual(nuevoSaldo1);
+             return true; // Descuento Exitoso
+         } else {
+             return false; // Monto inválido
+         }
+    }
+
     // Método crearCuenta según la lógica indicada
     public Cuenta crearCuenta(Cliente cliente) {
         // Convertir el código a String

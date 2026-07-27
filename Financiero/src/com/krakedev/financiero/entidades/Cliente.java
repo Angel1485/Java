@@ -6,16 +6,18 @@ public class Cliente {
     private String cedula;
     private String nombre;
     private String apellido;
+    private Direccion direccionDomicilio;
 
     // Constructor vacío 
     public Cliente() {
     }
 
     // Constructor
-    public Cliente(String cedula, String nombre, String apellido) {
+    public Cliente(String cedula, String nombre, String apellido, Direccion direccionDomicilio) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.direccionDomicilio = direccionDomicilio;
     }
 
     // Método imprimir
@@ -24,6 +26,7 @@ public class Cliente {
         System.out.println("Cédula: " + cedula);
         System.out.println("Nombre: " + nombre);
         System.out.println("Apellido: " + apellido);
+        System.out.println("Direccion Calle Principal: " + direccionDomicilio);
     }
 
     // Getters y Setters
