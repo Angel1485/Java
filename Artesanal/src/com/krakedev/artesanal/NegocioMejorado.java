@@ -54,6 +54,9 @@ public class NegocioMejorado {
     // 9. RegistrarCliente
     public void registrarCliente(String nombre, String cedula) {
         Cliente nuevoCliente = new Cliente(nombre, cedula);
+        // Asignamos código y total
+        nuevoCliente.setCodigo(clientes.size() + 1);
+        nuevoCliente.setTotalConsumido(0.0);
         clientes.add(nuevoCliente);
     }
 
@@ -79,6 +82,39 @@ public class NegocioMejorado {
             }
         }
         return null; // No existe
+    }
+
+    // 15. Método consumirCerveza
+    public void consumirCerveza(String codigoMaquina, int codigoCliente, double cantidad) {
+
+        Maquina maquina = recuperarMaquina(codigoMaquina);
+        Cliente cliente = buscarClientePorCodigo(codigoCliente);
+
+        // Solo si ambos existen
+        if (maquina != null && cliente != null) {
+            // Invocar servirCerveza y guardar el resultado
+            double valorConsumido = maquina.servirCerveza(cantidad);
+            // Llamar a registrarConsumo (integración punto 17)
+            registrarConsumo(cliente, valorConsumido);
+        }
+    }
+
+     // 16. Método registrarConsumo
+    private void registrarConsumo(Cliente cliente, double valor) {
+        // Acumular (NO reemplazar)
+        cliente.setTotalConsumido(cliente.getTotalConsumido() + valor);
+    }
+
+     // 19. Método consultarValorVendido
+    public double consultarValorVendido() {
+        double totalGeneral = 0;
+        // Recorremos TODA la lista de clientes
+        for (int i = 0; i < clientes.size(); i++) {
+            Cliente c = clientes.get(i);
+            // Acumulamos el total consumido de cada uno
+            totalGeneral += c.getTotalConsumido();
+        }
+        return totalGeneral;
     }
 
     // Getter y Setter
