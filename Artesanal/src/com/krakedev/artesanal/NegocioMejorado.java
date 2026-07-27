@@ -5,6 +5,8 @@ import java.util.ArrayList; // Importante para usar ArrayList
 public class NegocioMejorado {
 
      private ArrayList<Maquina> maquinas;
+     //PUNTO 8: No inicializar aún Para que de el NullException -  PUNTO 11: Se corrige el error inicializando el arrayList
+     private ArrayList<Cliente> clientes = new ArrayList<>();
 
     // Constructor
     public NegocioMejorado() {
@@ -47,6 +49,36 @@ public class NegocioMejorado {
             return true; // Agregado correctamente
         }
         
+    }
+
+    // 9. RegistrarCliente
+    public void registrarCliente(String nombre, String cedula) {
+        Cliente nuevoCliente = new Cliente(nombre, cedula);
+        clientes.add(nuevoCliente);
+    }
+
+    // 13. Método buscarClientePorCedula
+    public Cliente buscarClientePorCedula(String cedula) {
+        // Usa for como lo exige el taller
+        for (int i = 0; i < clientes.size(); i++) {
+            Cliente c = clientes.get(i);
+            if (c.getCedula().equals(cedula)) {
+                return c; // Encontrado
+            }
+        }
+        return null; // No existe
+    }
+
+    // 14. Método buscarClientePorCodigo
+    public Cliente buscarClientePorCodigo(int codigo) {
+        // Mismo funcionamiento, pero busca por código
+        for (int i = 0; i < clientes.size(); i++) {
+            Cliente c = clientes.get(i);
+            if (c.getCodigo() == codigo) {
+                return c; // Encontrado
+            }
+        }
+        return null; // No existe
     }
 
     // Getter y Setter
