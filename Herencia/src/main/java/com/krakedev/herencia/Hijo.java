@@ -18,4 +18,12 @@ public class Hijo extends Padre{
         return "Hijo [Virtudes=" + getVirtudes() + ", Defectos=" + getDefectos() + ", Juguetes=" + juguetes + ", Total Ahorrado=" + getTotalAhorrado() +"]";
     }
     
+     // Metodo Ahorar sobreescrito
+    @Override
+    public void ahorrar(double monto) {
+        // El hijo solo ahorra el 50% del monto dado.
+        // Usamos super.ahorrar() ya que es publico para reutilizar el metodo del Padre.
+        super.ahorrar(monto * 0.5); 
+    }
+    
   }
