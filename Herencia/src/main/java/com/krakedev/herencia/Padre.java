@@ -9,14 +9,16 @@ public class Padre {
     int virtudes;
     private int defectos;
     private double totalAhorrado;
+    private String nombre; 
     
     // public Padre(){
     //     System.err.println("Constructor Vacio - Padre");
     // }
 
-    public Padre(int virtudes , int defectos){
+    public Padre(int virtudes , int defectos, String nombre){
         this.virtudes = virtudes;
         this.defectos = defectos;
+        this.nombre = nombre; 
     }
     
     public void imprimir(){
@@ -47,7 +49,7 @@ public class Padre {
     
     @Override
     public String toString() {
-        return "Padre [Virtudes=" + virtudes + ", Defectos=" + defectos + ", Total Ahorrado=" + totalAhorrado + "]";
+        return "Padre [ Nombre= " + nombre + ",Virtudes=" + virtudes + ", Defectos=" + defectos + ", Total Ahorrado=" + totalAhorrado + "]";
     }
     
     /**
@@ -90,5 +92,19 @@ public class Padre {
      */
     public void setTotalAhorrado(double totalAhorrado) {
         this.totalAhorrado = totalAhorrado;
+    }
+
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }

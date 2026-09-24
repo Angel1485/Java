@@ -13,14 +13,14 @@ public class TestArrayList {
         
          ArrayList<Hija> listaDeHijas= new ArrayList<Hija>(); // donde se almacenara las hijas
          
-         Hija h1 =  new Hija(2,23);
+         Hija h1 =  new Hija(2,23,"Justin");
          
          h1.setDefectos(2);
          h1.setVirtudes(4);
          
          listaDeHijas.add(h1);
          
-         Hija h2 =  new Hija(2,23);
+         Hija h2 =  new Hija(2,23,"Justin");
          
          h2.setDefectos(3);
          h2.setVirtudes(5);

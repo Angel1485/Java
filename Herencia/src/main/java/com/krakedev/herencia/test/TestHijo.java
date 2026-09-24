@@ -10,7 +10,7 @@ public class TestHijo {
 
     public static void main(String[] args) {
        
-        Hijo h =  new Hijo(2,5,10);
+        Hijo h =  new Hijo(2,5,10,"Justin");
         
         System.out.println(h);
     }

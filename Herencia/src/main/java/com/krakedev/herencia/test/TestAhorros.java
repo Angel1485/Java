@@ -18,7 +18,7 @@ public class TestAhorros {
         // PASO 1: Padre
         System.out.println("\n--- PASO 1: PADRE ---");
         // Creamos un objeto Padre (Le pongo valores de ejemplo)
-        Padre padre = new Padre(1, 2);
+        Padre padre = new Padre(1, 2, "Justin");
         
         // Invocamos ahorrar()
         padre.ahorrar(montoAhorrar);
@@ -30,7 +30,7 @@ public class TestAhorros {
         // PASO 2: Hija
         System.out.println("\n--- PASO 2: HIJA ---");
         // Creamos un objeto Hija 
-        Hija hija = new Hija(2, 3);
+        Hija hija = new Hija(2, 3, "Jhoana");
         
         // Invocamos ahorrar() 
         hija.ahorrar(montoAhorrar);
@@ -41,7 +41,7 @@ public class TestAhorros {
         // PASO 3: Hijo
         System.out.println("\n--- PASO 3: HIJO ---");
         // Creamos un objeto Hijo 
-        Hijo hijo = new Hijo(3, 4, 5);
+        Hijo hijo = new Hijo(3, 4, 5, "Juan");
         
         // Invocamos ahorrar()
         hijo.ahorrar(montoAhorrar);

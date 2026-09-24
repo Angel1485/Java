@@ -10,7 +10,7 @@ public class TestToString {
 
     public static void main(String[] args) {
         
-        Padre p  = new Padre(2,3);
+        Padre p  = new Padre(2,3,"Justin");
         
         System.out.println(p); // La P llama al metodo toString automaticamente
         

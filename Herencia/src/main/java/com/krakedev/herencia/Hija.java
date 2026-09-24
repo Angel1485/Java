@@ -12,8 +12,8 @@ public class Hija extends Padre{
     // }
     
    //Llama al constructor con parametros
-   public Hija(int virtudes, int defectos){
-      super(virtudes, defectos);
+   public Hija(int virtudes, int defectos, String nombre){
+      super(virtudes, defectos, nombre);
    }
    
    public void escucharBadBunny(){
@@ -23,6 +23,6 @@ public class Hija extends Padre{
 
    @Override //metodo toString sobreescrito
    public String toString() {
-       return "Hija [Virtudes=" + getVirtudes()+ ", Defectos=" + getDefectos() + ", Total Ahorrado=" + getTotalAhorrado() +"]";
+       return "Hija [Nombre= " + getNombre() + ",Virtudes=" + getVirtudes()+ ", Defectos=" + getDefectos() + ", Total Ahorrado=" + getTotalAhorrado() +"]";
    }
 }
