@@ -8,6 +8,7 @@ public class Padre {
     
     int virtudes;
     private int defectos;
+    private double totalAhorrado;
     
     // public Padre(){
     //     System.err.println("Constructor Vacio - Padre");
@@ -28,16 +29,27 @@ public class Padre {
         System.out.println("Esto no se hereda");
     }
     
+     //Metodo Ahorrar
+    public void ahorrar(double monto) {
+        totalAhorrado += monto;
+    }
+    
+    
     //Metodo que se utiliz para sobreescrinir toString
     // public String toString(){ 
     //     return "Defectos: " + defectos + " "+ "Virtudes: " + virtudes;
     // }
     
-    @Override  //Nos ayuda a verificar que exista el metodo
+    //@Override  //Nos ayuda a verificar que exista el metodo
+    //public String toString() {
+      //  return "Padre [virtudes=" + virtudes + ", defectos=" + defectos + ", toString()=" + super.toString() + "]";
+    //}
+    
+    @Override
     public String toString() {
-        return "Padre [virtudes=" + virtudes + ", defectos=" + defectos + ", toString()=" + super.toString() + "]";
+        return "Padre [Virtudes=" + virtudes + ", Defectos=" + defectos + ", Total Ahorrado=" + totalAhorrado + "]";
     }
-
+    
     /**
      * @return the defectos
      */
@@ -64,5 +76,19 @@ public class Padre {
      */
     public void setVirtudes(int virtudes) {
         this.virtudes = virtudes;
+    }
+    
+    /**
+     * @return the totalAhorrado
+     */
+    public double getTotalAhorrado() {
+        return totalAhorrado;
+    }
+
+    /**
+     * @param totalAhorrado the totalAhorrado to set
+     */
+    public void setTotalAhorrado(double totalAhorrado) {
+        this.totalAhorrado = totalAhorrado;
     }
 }

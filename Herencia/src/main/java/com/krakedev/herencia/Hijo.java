@@ -18,6 +18,4 @@ public class Hijo extends Padre{
         return "Hijo [Virtudes=" + getVirtudes() + ", Defectos=" + getDefectos() + ", Juguetes=" + juguetes + "]";
     }
     
-    
-
   }
