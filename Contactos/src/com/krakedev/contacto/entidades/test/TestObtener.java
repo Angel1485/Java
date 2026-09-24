@@ -8,8 +8,8 @@ public class TestObtener {
     public static void main(String[] args) {
         
         Directorio dir = new Directorio();
-        Contacto c1 = new Contacto();
 
+        Contacto c1 = new Contacto();
         c1.setNombre("Maria");
         Contacto c2 = new Contacto();
         c2.setNombre("Juan");
@@ -22,7 +22,7 @@ public class TestObtener {
 
         Contacto contactoRecuperado = dir.obtenerContacto(1);
 
-        System.err.println("Nombre: "+contactoRecuperado.getNombre());
+        System.err.println("Nombre: " + contactoRecuperado.getNombre());
 
     }
 }

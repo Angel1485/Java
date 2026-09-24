@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Directorio {
 
+    //Lista de objetos
     ArrayList<Contacto> contactos;
 
     public Directorio(){
@@ -66,8 +67,6 @@ public class Directorio {
             if(c.getCelular().equals(numero)){
                 encontrado = c;
                 break;
-            }else{
-
             }
         }
         return encontrado;
@@ -94,12 +93,7 @@ public class Directorio {
         return encontrados;
     }
 
-
-
-
-
-
-
+    // Getter y Setter
     public ArrayList<Contacto> getContactos() {
         return contactos;
     }

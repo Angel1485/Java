@@ -15,7 +15,7 @@ public class NegocioMejorado {
 
     // 3. Método generarCodigo
     public String generarCodigo() {
-        int numeroAleatorio = (int) (Math.random() * 100) + 1;
+        int numeroAleatorio = (int) (Math.random() * 500) + 1;
         return "M-" + numeroAleatorio;
     }
 
@@ -44,11 +44,11 @@ public class NegocioMejorado {
         if (recuperarMaquina(codigo) != null) {
             return false; // Código repetido, no se agrega
         }else{
-            Maquina nuevaMaquina = new Maquina(codigo, nombreCerveza, descripcion,  precioPorML );
+            Maquina nuevaMaquina = new Maquina(codigo, nombreCerveza, descripcion,  precioPorML);
             maquinas.add(nuevaMaquina);
+            System.out.println("Máquina agregada. Código: " + nuevaMaquina.getCodigo());
             return true; // Agregado correctamente
         }
-        
     }
 
     // 9. RegistrarCliente
@@ -65,7 +65,7 @@ public class NegocioMejorado {
         // Usa for como lo exige el taller
         for (int i = 0; i < clientes.size(); i++) {
             Cliente c = clientes.get(i);
-            if (c.getCedula().equals(cedula)) {
+            if (c.getCedula().equals(cedula.trim())) {
                 return c; // Encontrado
             }
         }
@@ -90,6 +90,8 @@ public class NegocioMejorado {
         Maquina maquina = recuperarMaquina(codigoMaquina);
         Cliente cliente = buscarClientePorCodigo(codigoCliente);
 
+         System.out.println("Máquina encontrada: " + (maquina != null));
+    System.out.println("Cliente encontrado: " + (cliente != null));
         // Solo si ambos existen
         if (maquina != null && cliente != null) {
             // Invocar servirCerveza y guardar el resultado

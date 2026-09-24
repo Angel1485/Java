@@ -16,7 +16,7 @@ public class TestReferenciayErrores {
 
         dir.agregarContacto(new Contacto()); // No tiene constructor
         
-        Contacto c = dir.obtenerContacto(1);
+        Contacto c = dir.obtenerContacto(0);
 
         System.out.println("Nombre: " + c.getNombre());
     }

@@ -26,7 +26,7 @@ public class TestRecuperarNumero {
 
         String numeroRecuperado =  dir.recuperarNumero(0);
 
-        System.out.println("Numero Celualr: " + numeroRecuperado);
+        System.out.println("Numero Celular: " + numeroRecuperado);
 
     }
 

@@ -1,0 +1,11 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "Artesanal/lib/junit-jupiter-api-5.10.2.jar",
+        "Artesanal/lib/junit-jupiter-engine-5.10.2.jar",
+        "Artesanal/lib/junit-platform-console-standalone-1.10.2.jar",
+        "Artesanal/lib/junit-platform-launcher-1.10.2.jar",
+        "Artesanal/lib/opentest4j-1.3.0.jar"
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
+}

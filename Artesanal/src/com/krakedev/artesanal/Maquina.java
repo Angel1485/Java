@@ -25,7 +25,7 @@ public class Maquina {
         this.nombreCerveza = nombreCerveza;
         this.descripcion = descripcion;
         this.precioPorMl = precioPorMl;
-        this.capacidadMaxima = 10000;
+        this.capacidadMaxima = 1000;
         this.cantidadActual = 0;
     }
 
@@ -72,7 +72,6 @@ public class Maquina {
         }else{
             return 0;
         }
-        
     }
 
     public String getCodigo() { // Nuevo GETTER que es del codigo

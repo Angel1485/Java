@@ -24,13 +24,13 @@ public class TestEliminar {
         dir.agregarContacto(c2);
         dir.agregarContacto(c3);
 
-        boolean r1 = dir.eliminarContacto("0304");
+        boolean r1 = dir.eliminarContacto("0102");
 
         System.out.println("Resultado de Eliminar Contacto 1: " + r1); 
 
         boolean r2 = dir.eliminarContacto("0304");
 
-        System.out.println("Resultado de Eliminar Contacto 1: " + r2); 
+        System.out.println("Resultado de Eliminar Contacto 2: " + r2); 
 
         System.out.println("Cantidad Contactos: " + dir.obtenerCantidadContactos());
     }
