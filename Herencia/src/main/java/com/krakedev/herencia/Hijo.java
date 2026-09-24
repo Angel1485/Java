@@ -15,7 +15,7 @@ public class Hijo extends Padre{
     
     @Override //metodo toString sobreescrito
     public String toString() {
-        return "Hijo [Virtudes=" + getVirtudes() + ", Defectos=" + getDefectos() + ", Juguetes=" + juguetes + "]";
+        return "Hijo [Virtudes=" + getVirtudes() + ", Defectos=" + getDefectos() + ", Juguetes=" + juguetes + ", Total Ahorrado=" + getTotalAhorrado() +"]";
     }
     
   }

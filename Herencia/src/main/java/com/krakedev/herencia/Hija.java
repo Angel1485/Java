@@ -23,6 +23,6 @@ public class Hija extends Padre{
 
    @Override //metodo toString sobreescrito
    public String toString() {
-       return "Hija [Virtudes=" + getVirtudes()+ ", Defectos=" + getDefectos() + "]";
+       return "Hija [Virtudes=" + getVirtudes()+ ", Defectos=" + getDefectos() + ", Total Ahorrado=" + getTotalAhorrado() +"]";
    }
 }
