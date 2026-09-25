@@ -1,0 +1,62 @@
+package com.krakedev.figuras;
+
+/**
+ *
+ * @author asarango
+ */
+public class FiguraPadre {
+    
+    private String nombre;
+    private String color;
+    
+
+    public FiguraPadre(String nombre , String color){    
+        this.nombre=nombre;
+        this.color=color;
+    }
+    
+    // Metodo calcular perimetro
+    public int calcularPerimetro(){
+        return 0;
+    }
+    
+    //Metodo base para el area
+    public double calcularArea() {
+        return 0;
+    }
+    
+     @Override
+    public String toString() {
+        return "Figura{ " + "nombre=" + nombre  + ", color=" + color +'}';
+    }
+    
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    /**
+     * @return the color
+     */
+    public String getColor() {
+        return color;
+    }
+
+    /**
+     * @param color the color to set
+     */
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    
+}
