@@ -20,19 +20,30 @@ public abstract class FiguraPadre {
     //Ahora con metodos abstractos sin cuerpo
     public abstract int calcularPerimetro();
     public abstract double calcularArea();
-
+    
+    
+//    //Nuevos métodos abstractos geométricos
+//    public abstract double calcularDiametro();
+//    public abstract double calcularApotema();
+//    public abstract double calcularAreaCircunscrita();
+//    public abstract double calcularAreaInscrita();
+//    public abstract double calcularVolumen(double profundidad);
+    
+    public void imprimirDetalle(){
+         System.out.println("Figura: " + nombre + " | Color: " + color);;
+    }
 
     // Metodo calcular perimetro con cuerpo
     // public int calcularPerimetro(){
     //     return 0;
     // }
     
-    //Metodo base para el area con cuerpo
+    // Metodo base para el area con cuerpo
     // public double calcularArea() {
     //     return 0;
     // }
     
-     @Override
+    @Override
     public String toString() {
         return "Figura{ " + "nombre=" + nombre  + ", color=" + color +'}';
     }

@@ -19,8 +19,8 @@ public class TestPolimorfismo {
         Graficador graficador = new Graficador();
 
         // Declaramos variables de tipo Figura, pero guardamos objetos hijos y sobreescribimos con polimorfismo en las clases hijas
-        FiguraPadre f1 = new Cuadrado("Cuadrado", "Rojo", 5);
-        FiguraPadre f2 = new Rectangulo("Rectangulo", "Azul", 4, 7);
+        FiguraPadre f1 = new Cuadrado("Cuadrado", "Rojo");
+        FiguraPadre f2 = new Rectangulo("Rectangulo", "Azul");
         
         //Instanciamos el TrianguloRectangulo (catetos de 3 y 4)
         // La hipotenusa debería calcularse sola y dar 5

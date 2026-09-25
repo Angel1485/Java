@@ -32,11 +32,35 @@ public class TrianguloRectangulo extends FiguraPadre {
 
     // Sobrescribir calcularArea
     // El area de un triangulo rectángulo es (catetoA * catetoB) / 2
-    @Override
-    public double calcularArea() {
-        return (getCatetoA() * getCatetoB()) / 2.0;
-    }
-    
+//    @Override
+//    public double calcularArea() {
+//        return (getCatetoA() * getCatetoB()) / 2.0;
+//    }
+//    
+//    @Override
+//    public double calcularDiametro() {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//    }
+//
+//    @Override
+//    public double calcularApotema() {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//    }
+//
+//    @Override
+//    public double calcularAreaCircunscrita() {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//    }
+//
+//    @Override
+//    public double calcularAreaInscrita() {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//    }
+//
+//    @Override
+//    public double calcularVolumen(double profundidad) {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//    }
     
     /**
      * @return the catetoA
@@ -79,6 +103,10 @@ public class TrianguloRectangulo extends FiguraPadre {
     public void setHipotenusa(double hipotenusa) {
         this.hipotenusa = hipotenusa;
     }
-    
-    
+
+    @Override
+    public double calcularArea() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+ 
 }

@@ -22,14 +22,14 @@ public class TestGraficar {
         //FiguraPadre figura = new FiguraPadre("Figura", "Amarillo");  --- FiguraPadre ahora es abstract
         
         //Estas funcionan porque son clases hijas
-        Cuadrado cuadrado = new Cuadrado("Cuadrado", "Rojo", 5);
-        Rectangulo rectangulo = new Rectangulo("Rectangulo", "Azul" , 5 , 2);
+        Cuadrado cuadrado = new Cuadrado("Cuadrado", "Rojo");
+      //  Rectangulo rectangulo = new Rectangulo("Rectangulo", "Azul" , 5 , 2);
         Triangulo triangulo = new Triangulo ("Triangulo", "Verde");
 
         // 3. Invocar el método graficar para cada objeto
        // graficador.graficar(figura);
         graficador.graficar(cuadrado);
-        graficador.graficar(rectangulo);
+      //  graficador.graficar(rectangulo);
         graficador.graficar(triangulo);  
 
     }

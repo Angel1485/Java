@@ -10,7 +10,7 @@ public class Rectangulo extends FiguraPadre {
     private int base;
     private int altura;
     
-    public Rectangulo(String nombre, String color , int base , int altura) {
+    public Rectangulo(String nombre, String color) {
         super(nombre, color);
         this.base = base;
         this.altura = altura;
@@ -28,6 +28,13 @@ public class Rectangulo extends FiguraPadre {
         return base * altura;
     }
     
+      @Override 
+    public void imprimirDetalle() {
+        System.out.println("Triagulo [" + getColor() + "] - Perímetro: " +
+                           calcularPerimetro() + " | Área: " + calcularArea()); 
+    }
+    
+
     /**
      * @return the base
      */
@@ -55,5 +62,5 @@ public class Rectangulo extends FiguraPadre {
     public void setAltura(int altura) {
         this.altura = altura;
     }
-    
+   
 }

@@ -12,7 +12,7 @@ public class TestPerimetro {
     public static void main(String[] args) {
         
         //Prueba Cuadrado
-        Cuadrado cuadrado = new Cuadrado("Cuadrado", "Rojo", 5);
+        Cuadrado cuadrado = new Cuadrado("Cuadrado", "Rojo");
         
         // Calculamos su perímetro (Fórmula: 4 * lado)
         int perimetroCuadrado = cuadrado.calcularPerimetro();
@@ -23,7 +23,7 @@ public class TestPerimetro {
         System.out.println("Perimetro calculado: " + perimetroCuadrado);
 
         //Prueba Rectángulo
-        Rectangulo rectangulo = new Rectangulo("Rectangulo", "Azul", 8, 4);
+        Rectangulo rectangulo = new Rectangulo("Rectangulo", "Azul");
         
         // Calculamos el perimetro (Formula: 2 * base + 2 * altura)
         int perimetroRectangulo = rectangulo.calcularPerimetro();
