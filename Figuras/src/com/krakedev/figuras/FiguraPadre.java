@@ -4,26 +4,33 @@ package com.krakedev.figuras;
  *
  * @author asarango
  */
-public class FiguraPadre {
+
+//se añade la clase abstract
+public abstract class FiguraPadre {
     
     private String nombre;
     private String color;
-    
 
     public FiguraPadre(String nombre , String color){    
         this.nombre=nombre;
         this.color=color;
     }
     
-    // Metodo calcular perimetro
-    public int calcularPerimetro(){
-        return 0;
-    }
+    // Métodos abstractos: obligan a las hijas a implementarlos
+    //Ahora con metodos abstractos sin cuerpo
+    public abstract int calcularPerimetro();
+    public abstract double calcularArea();
+
+
+    // Metodo calcular perimetro con cuerpo
+    // public int calcularPerimetro(){
+    //     return 0;
+    // }
     
-    //Metodo base para el area
-    public double calcularArea() {
-        return 0;
-    }
+    //Metodo base para el area con cuerpo
+    // public double calcularArea() {
+    //     return 0;
+    // }
     
      @Override
     public String toString() {
@@ -58,5 +65,4 @@ public class FiguraPadre {
         this.color = color;
     }
 
-    
 }
