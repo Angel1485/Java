@@ -1,0 +1,54 @@
+package com.krakedev.asistencias.model;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+public class Asistencia {
+	
+    private LocalDate fechaClase;
+    private LocalDateTime fechaHoraRegistro;
+    private String estado; // P-Presente, A-Ausente
+
+    // Constructor vacio
+    public Asistencia() {
+    }
+
+    // Constructor con parametros
+    public Asistencia(LocalDate fechaClase, LocalDateTime fechaHoraRegistro, String estado) {
+        this.fechaClase = fechaClase;
+        this.fechaHoraRegistro = fechaHoraRegistro;
+        this.estado = estado;
+    }
+
+    // Getters y Setters
+    public LocalDate getFechaClase() {
+        return fechaClase;
+    }
+
+    public void setFechaClase(LocalDate fechaClase) {
+        this.fechaClase = fechaClase;
+    }
+
+    public LocalDateTime getFechaHoraRegistro() {
+        return fechaHoraRegistro;
+    }
+
+    public void setFechaHoraRegistro(LocalDateTime fechaHoraRegistro) {
+        this.fechaHoraRegistro = fechaHoraRegistro;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    // toString
+    @Override
+    public String toString() {
+        return "Asistencia [fechaClase=" + fechaClase + ", fechaHoraRegistro=" + fechaHoraRegistro + ", estado=" + estado + "]";
+    }
+
+}
