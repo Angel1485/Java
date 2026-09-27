@@ -1,5 +1,4 @@
 package com.krakedev.parqueadero.model;
-
 import java.time.LocalDateTime;
 
 public abstract class Vehiculo {

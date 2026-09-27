@@ -1,5 +1,4 @@
 package com.krakedev.parqueadero.model;
-
 public class Motocicleta extends Vehiculo{
 
 	 private int cilindraje;

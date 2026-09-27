@@ -1,5 +1,4 @@
 package com.krakedev.parqueadero.model;
-
 public class Auto extends Vehiculo {
 
     private int numeroPuertas;
