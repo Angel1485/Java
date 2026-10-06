@@ -33,6 +33,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webmvc</artifactId> 
+			<exclusions>   <!-- Se agrego la exclusion del logging en la webs-->
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId> 
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
@@ -50,12 +56,18 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>  <!-- Se borro (-webmvc ) -->
 			<scope>test</scope>
+			<exclusions>   <!-- Se agrego la exclusion del logging en el test -->
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId> 
+				</exclusion>
+			</exclusions>
 		</dependency>
-		<dependency>
-			<groupId>com.company.inventory</groupId>
-			<artifactId>Inventory</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		    <!-- Starter de Log4j2 -->
+	    <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-log4j2</artifactId>
+	    </dependency>
 	</dependencies>
 
 	<build>
