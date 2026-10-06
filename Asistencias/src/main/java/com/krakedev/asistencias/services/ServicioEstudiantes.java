@@ -46,8 +46,10 @@ public class ServicioEstudiantes {
         if (encontrado != null) {
             encontrado.setNombre(estudianteActualizado.getNombre());
             encontrado.setApellido(estudianteActualizado.getApellido());
+        }else {
+        	return null;
         }
-        return estudianteActualizado;
+        return encontrado;
     }
 
     // Listar todos

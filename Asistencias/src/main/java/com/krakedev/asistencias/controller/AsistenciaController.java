@@ -1,4 +1,5 @@
 package com.krakedev.asistencias.controller;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +30,21 @@ public class AsistenciaController {
     @GetMapping("/{cedula}")
     public List<RegistroAsistencia> consultar(@PathVariable String cedula) {
         return servicioAsistencia.consultarAsistencia(cedula);
+    }
+    
+    // PUT para actualizar la asistencia
+    @PutMapping("/{cedula}/{fecha}/{estado}")
+    public RegistroAsistencia actualizarAsistencia(@PathVariable String cedula,
+											       @PathVariable LocalDate fecha, 
+											       @PathVariable String estado) {
+        
+        return servicioAsistencia.editarAsistencia(cedula, fecha, estado);
+    }
+    
+    // DELETE para eliminar la asistencia
+    @DeleteMapping("/{cedula}/{fecha}")
+    public boolean eliminarAsistencia(@PathVariable String cedula, @PathVariable LocalDate fecha) {
+        return servicioAsistencia.eliminarAsistencia(cedula, fecha);
     }
 
 }
