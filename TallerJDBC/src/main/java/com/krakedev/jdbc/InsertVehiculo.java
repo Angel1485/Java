@@ -52,7 +52,7 @@ public class InsertVehiculo {
                 log.info("Vehiculo insertado correctamente: {}", vehiculo);
                 log.info("Insert exitoso. Filas afectadas: " + filasAfectadas);
             } else {
-                log.warn("No se insertó ningún vehiculo");
+                log.warn("No se inserto ningún vehiculo");
             }
 
         } catch (SQLException e) {
