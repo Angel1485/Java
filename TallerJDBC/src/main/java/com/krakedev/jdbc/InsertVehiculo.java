@@ -14,11 +14,11 @@ public class InsertVehiculo {
     public static void main(String[] args) {
 
         // 1. Creamos el vehiculo a insertar
-        Vehiculo vehiculo = new Vehiculo("ABC700", "Toyota", "Corolla", 2020, 18500.50, "Rojo", true);
+        Vehiculo vehiculo = new Vehiculo("ABC70050", "Toyota", "Corolla", 2020, 18500.50, "Rojo", true, 500);
         
-        //Vehiculos de Pruebas
-        //Vehiculo vehiculo1 = new Vehiculo("XYZ789", "Mazda", "CX-5", 2022, 27000.00, "Azul", true);    
-        //Vehiculo vehiculo = new Vehiculo("DEF456", "Chevrolet", "Aveo", 2018, 9500.75, "Negro", false);
+        //Vehiculos de Pruebas para añadir con kilometraje
+        //Vehiculo vehiculo1 = new Vehiculo("XYZ789", "Mazda", "CX-5", 2022, 27000.00, "Azul", true, 600);    
+        //Vehiculo vehiculo = new Vehiculo("DEF456", "Chevrolet", "Aveo", 2018, 9500.75, "Negro", false , 500);
 
         Connection connection = null;
         PreparedStatement ps = null;
@@ -30,8 +30,8 @@ public class InsertVehiculo {
             // 3. Preparamos el SQL con parametros ?
             String sql = """
 	            		INSERT INTO public.vehiculos
-						(placa, marca, modelo, anio, precio, color, disponible)
-						VALUES(?, ?, ?, ?, ?, ?, ?);
+						(placa, marca, modelo, anio, precio, color, disponible, kilometraje)
+						VALUES(?, ?, ?, ?, ?, ?, ?, ?);
             		    """;
 
             ps = connection.prepareStatement(sql);
@@ -44,6 +44,7 @@ public class InsertVehiculo {
             ps.setDouble(5, vehiculo.getPrecio());
             ps.setString(6, vehiculo.getColor());
             ps.setBoolean(7, vehiculo.isDisponible());
+            ps.setInt(8, vehiculo.getKilometraje());
 
             // 5. Ejecutamos
             int filasAfectadas = ps.executeUpdate();
@@ -52,7 +53,7 @@ public class InsertVehiculo {
                 log.info("Vehiculo insertado correctamente: {}", vehiculo);
                 log.info("Insert exitoso. Filas afectadas: " + filasAfectadas);
             } else {
-                log.warn("No se inserto ningún vehiculo");
+                log.warn("No se inserto ningun vehiculo");
             }
 
         } catch (SQLException e) {

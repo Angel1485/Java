@@ -17,7 +17,7 @@ public class DeleteVehiculo {
 		try {
 			con = Conexion.getConnection(); //llama al metodo directamente porque es static
 			
-	        String placa = "DEF456"; //Place del vehiculo para eliminar
+	        String placa = "ABC70050"; //Place del vehiculo para eliminar
 			
 			String sql = """ 
 						 DELETE FROM public.vehiculos

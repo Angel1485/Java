@@ -18,7 +18,7 @@ public class UpdateVehiculo {
 			con = Conexion.getConnection(); //llama al metodo directamente porque es static
 			
 			//Placa del vehiculo que vamos a actualizar debe existir
-	        String placa = "ABC123";
+	        String placa = "ABC70050";
 
 	        //Nuevos datos
 	        String nuevaMarca = "Toyota";
@@ -27,10 +27,11 @@ public class UpdateVehiculo {
 	        double nuevoPrecio = 21000.00;
 	        String nuevoColor = "Blanco";
 	        boolean nuevaDisponibilidad = false;
+	        int nuevoKilometraje = 50058;
 			
 			String sql = """ 
 						 UPDATE public.vehiculos
-						 SET marca=?, modelo=?, anio=?, precio=?, color=?, disponible=?
+						 SET marca=?, modelo=?, anio=?, precio=?, color=?, disponible=? , kilometraje=?
 						 WHERE placa=?;
 				         """;
 			ps = con.prepareStatement(sql);
@@ -41,7 +42,8 @@ public class UpdateVehiculo {
             ps.setDouble(4, nuevoPrecio);
             ps.setString(5, nuevoColor);
             ps.setBoolean(6, nuevaDisponibilidad);
-            ps.setString(7, placa);
+            ps.setInt(7, nuevoKilometraje);
+            ps.setString(8, placa);
 
 			int filas = ps.executeUpdate();
 			

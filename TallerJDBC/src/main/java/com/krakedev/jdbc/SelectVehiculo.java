@@ -22,7 +22,7 @@ public class SelectVehiculo {
 			con = Conexion.getConnection(); //llama al metodo directamente porque es static
 			
 			String sql = """ 
-				 	     SELECT placa, marca, modelo, anio, precio, color, disponible
+				 	     SELECT placa, marca, modelo, anio, precio, color, disponible, kilometraje
 						 FROM public.vehiculos;
 				         """;
 			ps = con.prepareStatement(sql);
@@ -39,9 +39,10 @@ public class SelectVehiculo {
                 v.setPrecio(rs.getDouble("precio"));
                 v.setColor(rs.getString("color"));
                 v.setDisponible(rs.getBoolean("disponible"));
+                v.setKilometraje(rs.getInt("kilometraje"));
 				
 				log.info("Placa: " + v.getPlaca() + " Marca: " + v.getMarca() + " Modelo: " + v.getModelo() + " Año: " + v.getAnio() +
-				         " Precio: " + v.getPrecio() + " Color: " + v.getColor()+ " Disponible: " + v.isDisponible());
+				         " Precio: " + v.getPrecio() + " Color: " + v.getColor()+ " Disponible: " + v.isDisponible() + " Kilometraje: " + v.getKilometraje());
 			}
 			
 		}catch(Exception e) {
