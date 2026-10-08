@@ -32,7 +32,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webmvc</artifactId> 
+			<artifactId>spring-boot-starter-web</artifactId>   <!-- Se quiot a webmvc - mvc-->
 			<exclusions>   <!-- Se agrego la exclusion del logging en la webs-->
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
@@ -68,6 +68,14 @@
 	        <groupId>org.springframework.boot</groupId>
 	        <artifactId>spring-boot-starter-log4j2</artifactId>
 	    </dependency>
+	    <dependency>
+<!--	    NO SE PEUDE USAR DOS BASES A LA VES ////////////////////          -->
+<!--		    <groupId>org.postgresql</groupId>-->
+<!--		    <artifactId>postgresql</artifactId>-->
+<!--		    <version>42.7.3</version>  Puedes usar la última versión estable -->
+				<groupId>com.mysql</groupId>
+    			<artifactId>mysql-connector-j</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

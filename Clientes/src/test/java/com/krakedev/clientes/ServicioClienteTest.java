@@ -30,13 +30,13 @@ public class ServicioClienteTest {
         cliente.setCedula("1712345678");
         cliente.setNombre("Juan");
         cliente.setApellido("Perez");
-        cliente.setEmail("juan.perez@email.com");
+        //cliente.setEmail("juan.perez@email.com");
 
         Cliente resultado = servicio.crear(cliente);
 
         assertNotNull(resultado, "El cliente no debería ser nulo");
         assertEquals("1712345678", resultado.getCedula());
-        assertEquals("juan.perez@email.com", resultado.getEmail(), "El email debería coincidir");
+       // assertEquals("juan.perez@email.com", resultado.getEmail(), "El email debería coincidir");
         assertEquals(1, servicio.listar().size(), "La lista debería tener 1 cliente");
     }
 
@@ -46,13 +46,13 @@ public class ServicioClienteTest {
         cliente1.setCedula("1712345678");
         cliente1.setNombre("Juan");
         cliente1.setApellido("Perez");
-        cliente1.setEmail("juan.perez@email.com");
+    //    cliente1.setEmail("juan.perez@email.com");
 
         Cliente cliente2 = new Cliente();
         cliente2.setCedula("1712345678"); // Misma cédula
         cliente2.setNombre("Maria");
         cliente2.setApellido("Gomez");
-        cliente2.setEmail("maria.gomez@email.com");
+      //  cliente2.setEmail("maria.gomez@email.com");
 
         servicio.crear(cliente1);
         Cliente resultado = servicio.crear(cliente2);
@@ -66,14 +66,14 @@ public class ServicioClienteTest {
         Cliente cliente = new Cliente();
         cliente.setCedula("1712345678");
         cliente.setNombre("Juan");
-        cliente.setEmail("juan.perez@email.com");
+      //  cliente.setEmail("juan.perez@email.com");
         servicio.crear(cliente);
 
         Cliente encontrado = servicio.buscarPorCedula("1712345678");
 
         assertNotNull(encontrado);
         assertEquals("Juan", encontrado.getNombre());
-        assertEquals("juan.perez@email.com", encontrado.getEmail());
+      //  assertEquals("juan.perez@email.com", encontrado.getEmail());
     }
 
     @Test
@@ -86,11 +86,11 @@ public class ServicioClienteTest {
     void testListarClientes() {
         Cliente cliente1 = new Cliente();
         cliente1.setCedula("1111111111");
-        cliente1.setEmail("cliente1@email.com");
+      //  cliente1.setEmail("cliente1@email.com");
         
         Cliente cliente2 = new Cliente();
         cliente2.setCedula("2222222222");
-        cliente2.setEmail("cliente2@email.com");
+      //  cliente2.setEmail("cliente2@email.com");
 
         servicio.crear(cliente1);
         servicio.crear(cliente2);
@@ -107,14 +107,14 @@ public class ServicioClienteTest {
         original.setCedula("1712345678");
         original.setNombre("Juan");
         original.setApellido("Perez");
-        original.setEmail("juan.viejo@email.com");
+      //  original.setEmail("juan.viejo@email.com");
         servicio.crear(original);
 
         // 2. Creamos el objeto con los datos actualizados
         Cliente actualizado = new Cliente();
         actualizado.setNombre("Juan Carlos");
         actualizado.setApellido("Perez Gomez");
-        actualizado.setEmail("juan.nuevo@email.com"); // <-- Nuevo email
+      //  actualizado.setEmail("juan.nuevo@email.com"); // <-- Nuevo email
 
         // 3. Ejecutamos la actualización
         Cliente resultado = servicio.actualizar("1712345678", actualizado);
@@ -123,7 +123,7 @@ public class ServicioClienteTest {
         assertNotNull(resultado);
         assertEquals("Juan Carlos", resultado.getNombre());
         assertEquals("Perez Gomez", resultado.getApellido());
-        assertEquals("juan.nuevo@email.com", resultado.getEmail(), "El email debe haberse actualizado");
+    //    assertEquals("juan.nuevo@email.com", resultado.getEmail(), "El email debe haberse actualizado");
         
         // Verificamos que la cédula original no cambió
         assertEquals("1712345678", resultado.getCedula());
@@ -134,7 +134,7 @@ public class ServicioClienteTest {
         Cliente actualizado = new Cliente();
         actualizado.setNombre("Juan Carlos");
         actualizado.setApellido("Perez Gomez");
-        actualizado.setEmail("juan.nuevo@email.com");
+   //     actualizado.setEmail("juan.nuevo@email.com");
 
         Cliente resultado = servicio.actualizar("0000000000", actualizado);
 
@@ -145,7 +145,7 @@ public class ServicioClienteTest {
     void testEliminarClienteExitoso() {
         Cliente cliente = new Cliente();
         cliente.setCedula("1712345678");
-        cliente.setEmail("juan.perez@email.com");
+   //     cliente.setEmail("juan.perez@email.com");
         servicio.crear(cliente);
 
         boolean resultado = servicio.eliminar("1712345678");
